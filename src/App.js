@@ -1,24 +1,22 @@
 import React from 'react';
-// import { connect } from 'react-redux';
-// import { fetchProducts } from './actions/index'
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import ProductsContainer from './containers/ProductsContainer';
+
 
 class App extends React.Component {
 
-componentDidMount() {
-  fetch("http://localhost:3000/api/v1/products")
-  .then(response => response.json())
-  .then(data => console.log(data[0]))
-  } 
-
-
   render(){
     return (
+      <Router>
       <div className="App">
-        App
+        <NavBar />
+        <Route exact path="/products" component={ProductsContainer}/>
       </div>
+      </Router>
     );
   }
 }
  
 export default App;
-// export default connect(null, {fetchProducts})(App);
