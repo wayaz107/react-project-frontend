@@ -1,38 +1,19 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-// import {Provider} from 'react-redux';
-// // import './index.css';
-// import App from './App';
-// import store from './store.js'
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import productReducer from './reducers/productReducer';
+import App from './App';
 
-// ReactDOM.render(
-//   <Provider store={store}>
-//     <App />
-//   </Provider>,
-//   document.getElementById('root')
-// );
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const API_URL = 'http://localhost:3000/api/v1'
+let store = createStore(productReducer, composeEnhancers(applyMiddleware(thunk)));
 
-const setProducts = products => {
-  return {
-    type: 'FETCH_PRODUCTS',
-    products
-  }
-}
-
-export const fetchProducts = () => {
-  return dispatch => {
-    dispatch({type: 'LOADING_PRODUCTS'});
-      return fetch(`${API_URL}/products/`)
-      .then(response => response.json())
-      .then(products=> dispatch(setProducts(products)))
-      .catch(error => console.log(error))
-  }
-}
-
-// export function fetchProducts(action) {
-//   return(dispatch) => {
-//     fetch(`${API_URL}/products/`)
-//     .then (response => response.json())
-//   }
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

@@ -1,23 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom';
-// import NavBar from './components/NavBar';
-// import Home from './components/Home';
-// import ProductsContainer from './containers/ProductsContainer';
-
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Products from './containers/Products';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
 
 class App extends React.Component {
 
-  render(){
+  render() {
     return (
       <Router>
-      <div className="App">
+      <div className='App'>
         <NavBar />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/products" component={ProductsContainer}/>
+        <Route exact path='/' component={ Home } />
+        <Products />
       </div>
       </Router>
     );
   }
-}
- 
+};
+
 export default App;
