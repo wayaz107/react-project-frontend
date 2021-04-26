@@ -5,7 +5,10 @@ const productReducer = (state = { products: [] }, action) => {
         case 'FETCH_PRODUCTS':
           return {...state, products: action.payload};
         
-        default:
+        case 'ADD_PRODUCT':
+          return{...state, products: [...state.products, action.payload]}
+       
+          default:
           return state    
       }
     }
