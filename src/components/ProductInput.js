@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { Button, Form, Input,Label} from 'reactstrap';
+import { addProduct } from '../actions/productActions';
 
 class ProductInput extends React.Component {
 
