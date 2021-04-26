@@ -11,6 +11,20 @@ export const fetchProducts = () => {
       };
     };
 
-  
+    //add products
+
+    export const addProduct = (productData) => {
+      return (dispatch) => {
+      fetch ('http://localhost:3000/products',{
+        method: 'POST',
+        headers:{ 'Content-Type': 'application/json'},
+        body: JSON.stringify(productData)
+      })
+      .then(res => res.json())
+      .then(product => {
+        dispatch({type: 'ADD_PRODUCT', payload: product})
+      })
+    }
+  }
 
 

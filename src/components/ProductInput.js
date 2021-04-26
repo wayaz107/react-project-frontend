@@ -16,12 +16,15 @@ class ProductInput extends React.Component {
         });
     };
 
-handleSubmit = e => {
-    e.preventDefault();
-    
-
-  
-}
+    handleSubmit = e => {
+     e.preventDefault();
+     this.props.addProduct(this.state);
+     this.setState({
+        name: '',
+        brand: '',
+        image: ''
+        })
+    }
 
 
 
@@ -45,4 +48,4 @@ handleSubmit = e => {
     }
 }
 
-export default ProductInput;
+export default connect(null, {addProduct})(ProductInput);
