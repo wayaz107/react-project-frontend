@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import {fetchProducts} from '../actions/productActions';
 import ProductInput from '../components/ProductInput';
+import ProductsList from '../components/ProductsList';
 
 class ProductsContainer extends React.Component{
 
@@ -13,7 +14,8 @@ class ProductsContainer extends React.Component{
     render() {
         return (
             <div>
-                <ProductInput products={this.props.products}/>
+                <ProductInput/>
+                <ProductsList products={this.props.products}/>
             </div>
         )
     }

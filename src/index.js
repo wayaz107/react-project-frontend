@@ -6,6 +6,8 @@ import thunk from 'redux-thunk';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import productReducer from './reducers/productReducer';
 import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom' 
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -13,7 +15,9 @@ let store = createStore(productReducer, composeEnhancers(applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
+  <Router>
     <App />
+  </Router>
   </Provider>,
   document.getElementById('root')
 );
