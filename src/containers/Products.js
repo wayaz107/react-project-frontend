@@ -4,7 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import {fetchProducts} from '../actions/productActions';
 import ProductInput from '../components/ProductInput';
 import ProductsList from '../components/ProductsList';
-import ProductShow from '../components/ProductShow';
+// import ProductShow from '../components/ProductShow';
+import OwnedProducts from '../components/OwnedProducts';
+import WishList from '../components/WishList';
 
 class ProductsContainer extends React.Component{
 
@@ -17,7 +19,10 @@ class ProductsContainer extends React.Component{
             <div>
                 <ProductInput/>
                 <ProductsList products={this.props.products}/>
-                <ProductShow products={this.props.products}/>
+                <OwnedProducts products={this.props.products}/>
+                <WishList products={this.props.products}/>
+                {/* <ProductShow products={this.props.products}/> */}
+
             </div>
         )
     }
