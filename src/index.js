@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import productReducer from './reducers/productReducer';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom' 
-
+import './App.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
