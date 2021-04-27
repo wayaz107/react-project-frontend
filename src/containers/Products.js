@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import {fetchProducts} from '../actions/productActions';
 import ProductInput from '../components/ProductInput';
 import ProductsList from '../components/ProductsList';
+import ProductShow from '../components/ProductShow';
 
 class ProductsContainer extends React.Component{
 
@@ -16,6 +17,7 @@ class ProductsContainer extends React.Component{
             <div>
                 <ProductInput/>
                 <ProductsList products={this.props.products}/>
+                <ProductShow products={this.props.products}/>
             </div>
         )
     }
