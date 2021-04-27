@@ -27,4 +27,18 @@ export const fetchProducts = () => {
     }
   }
 
+  //delete products
+  export const deleteProduct = productId => {
+    return (dispatch) => {
+      fetch (`http://localhost:3000/products/${productId}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(product => {
+        dispatch({type: 'DELETE_PRODUCT', payload: product.id})
+      })
+    }
+  }
+
+
 
