@@ -20,7 +20,7 @@ class ProductsContainer extends React.Component{
                 <ProductInput/>
                 <ProductsList products={this.props.products}/>
                 <OwnedProducts products={this.props.products}/>
-                <WishList products={this.props.products}/>
+                {/* <WishList products={this.props.products}/> */}
                 {/* <ProductShow products={this.props.products}/> */}
 
             </div>
