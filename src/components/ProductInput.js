@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { Button, Form, Input,Label} from 'reactstrap';
+import { Col, Button, Form, FormGroup, Input ,Label} from 'reactstrap';
 import { addProduct } from '../actions/productActions';
 
 class ProductInput extends React.Component {
@@ -33,16 +33,33 @@ class ProductInput extends React.Component {
         return(
             <div className='ProductFormContainer'>
                 <Form className='ProductForm' onSubmit={this.handleSubmit}>
+                    
                     <h5>Add a new Skincare Product</h5>
-                    <Label>Name</Label>
+
+                    <FormGroup row>
+                    <Label for='name' sm={2}>Name</Label>
+                    <Col md={10}>
                     <input type='text' name='name' value={this.state.name} placeholder='Product Name' onChange={this.handleChange}/>
-                     <br></br>
-                    <Label>Brand</Label>
+                    </Col>
+                    </FormGroup>
+
+
+                    <FormGroup row>
+                    <Label for='brand' sm={2}>Brand</Label>
+                    <Col md={10}>
                     <input type='text' name='brand' value={this.state.brand} placeholder='Product Brand' onChange={this.handleChange}/>
-                    <br></br>
-                    <Label>Image</Label>
+                    </Col>
+                    </FormGroup>
+
+
+                    <FormGroup row>
+                    <Label for='image' sm={2}>Image</Label>
+                    <Col md={10}>
                     <input type='text' name='image' value={this.state.image} placeholder='Product Image' onChange={this.handleChange}/>
-                <Button>Add Product</Button>
+                    </Col>
+                    </FormGroup>
+
+                  <Button>Add Product</Button>
                 </Form>
             </div>
         )

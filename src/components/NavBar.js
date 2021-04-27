@@ -6,9 +6,9 @@ const NavBar = () => {
     return(
         <div className = "NavbarContainer">
             <NavLink to='/' className='NavbarLink'>Home</NavLink>
-            <NavLink to='/products' className='NavbarLink'>All Skincare</NavLink>
-            <NavLink to='/products/Owned' className='NavbarLink'>My Skincare</NavLink>
-            <NavLink to='/products/wish-list' className='NavbarLink'>Wish List</NavLink>
+            <NavLink to='/products' className='NavbarLink'>Skincare</NavLink>
+            <NavLink to='/products/Owned' className='NavbarLink'>Owned</NavLink>
+            <NavLink to='/products/wish-list' className='NavbarLink'>WishList</NavLink>
         </div>
     )
 }
