@@ -39,7 +39,7 @@ class ProductInput extends React.Component {
                     <FormGroup row>
                     <Label for='name' sm={2}>Name</Label>
                     <Col md={10}>
-                    <input type='text' name='name' value={this.state.name} placeholder='Product Name' onChange={this.handleChange}/>
+                    <Input type='text' name='name' value={this.state.name} placeholder='Product Name' onChange={this.handleChange}/>
                     </Col>
                     </FormGroup>
 
@@ -47,7 +47,7 @@ class ProductInput extends React.Component {
                     <FormGroup row>
                     <Label for='brand' sm={2}>Brand</Label>
                     <Col md={10}>
-                    <input type='text' name='brand' value={this.state.brand} placeholder='Product Brand' onChange={this.handleChange}/>
+                    <Input type='text' name='brand' value={this.state.brand} placeholder='Product Brand' onChange={this.handleChange}/>
                     </Col>
                     </FormGroup>
 
@@ -55,7 +55,7 @@ class ProductInput extends React.Component {
                     <FormGroup row>
                     <Label for='image' sm={2}>Image</Label>
                     <Col md={10}>
-                    <input type='text' name='image' value={this.state.image} placeholder='Product Image' onChange={this.handleChange}/>
+                    <Input type='text' name='image' value={this.state.image} placeholder='Product Image' onChange={this.handleChange}/>
                     </Col>
                     </FormGroup>
 

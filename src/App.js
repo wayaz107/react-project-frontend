@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Products from './containers/Products';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
+import Comments from './containers/Comments';
 
 class App extends React.Component {
 
@@ -11,7 +12,7 @@ class App extends React.Component {
       <div className='App'>
         <NavBar />
         <Route exact path='/' component={ Home } />
-        <Products />
+        <Products/>
       </div>
     );
   }
