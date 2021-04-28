@@ -17,12 +17,13 @@ class ProductsContainer extends React.Component{
     render() {
         return (
             <div>
-                <ProductInput/>
-                <ProductsList products={this.props.products}/>
-                <OwnedProducts products={this.props.products}/>
-                <WishList products={this.props.products}/>
+                <Switch>
+                <Route path='/products/new' component={ProductInput} />
+                <Route path='/products/owned' render={(routerProps) => <OwnedProducts {...routerProps} products={this.props.products}/>}/>
+                <Route path='/products/wish-list' render={(routerProps) => <WishList {...routerProps} products={this.props.products}/>}/>
+                <Route path='/products' render={(routerProps) => < ProductsList {...routerProps} products={this.props.products}/>}/>
                 {/* <ProductShow products={this.props.products}/> */}
-
+                </Switch>
             </div>
         )
     }

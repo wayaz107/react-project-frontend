@@ -40,5 +40,8 @@ export const fetchProducts = () => {
     }
   }
 
-
+// //toggle product owned/not owned
+// export const toggleOwned = (product, productId) => {
+//   const updateOwned = 
+// }
 
