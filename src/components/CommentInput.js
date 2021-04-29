@@ -7,12 +7,25 @@ class CommentInput extends React.Component{
      content: ''
  }
 
-    render(){
-        return(
-            <div>
-            </div>
-        )
-    }
-}
+ render() {
+    return (
+      <div className='CommentForm'>
+        <Form onSubmit={this.handleSubmit}>
+          
+            <h5>Add a New Comment</h5>
+          
+          <FormGroup row>
+            <Label for='content' sm={2}>Leave a Comment:</Label>
+            <Col md={10}>
+              <Input type='text' name='content' value={this.state.content} onChange={this.handleChange}/>
+            </Col>
+          </FormGroup>
+
+          <Button>Add Comment</Button>
+        </Form>
+      </div>
+    );
+  }
+};
 
 export default CommentInput;
