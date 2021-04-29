@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Col, Button, Form, FormGroup,Label,Input} from 'reactstrap';
-import { addComment} from '../actions/commentActions';
+import {addComment} from '../actions/commentActions'
 
 
-class CommentInput extends React.Component{
+class CommentInput extends React.Component {
     
  state = {
      content: ''
@@ -20,7 +20,7 @@ class CommentInput extends React.Component{
     e.preventDefault();
     this.props.addComment(this.state, this.props.product.id);
     this.setState({
-      title: ''
+      content: ''
     });
   };
 
@@ -47,4 +47,4 @@ class CommentInput extends React.Component{
   }
 };
 
-export default connect(null, { addComment })(CommentInput);
+export default connect(null, {addComment})(CommentInput);

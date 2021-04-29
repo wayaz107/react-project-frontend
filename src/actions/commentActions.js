@@ -1,6 +1,6 @@
-export const addCommment = (comment, productId) => {
+export const addComment = (comment, productId) => {
     return(dispatch) => {
-       fetch(`http://localhost:3000/products/${productsId}/comments`,{
+       fetch(`http://localhost:3000/products/${productId}/comments`, {
            method: 'POST',
            headers: {'Content-Type': 'application/json'},
            body: JSON.stringify(comment)
@@ -9,5 +9,5 @@ export const addCommment = (comment, productId) => {
        .then(product => {
            dispatch({type: 'ADD_COMMENT', payload: product})
        })
-    }
-}
+    };
+};
