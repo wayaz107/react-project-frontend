@@ -10,6 +10,21 @@ class CommentInput extends React.Component{
      content: ''
  }
 
+ handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.props.addComment(this.state, this.props.product.id);
+    this.setState({
+      title: ''
+    });
+  };
+
+
 
  render() {
     return (
@@ -32,4 +47,4 @@ class CommentInput extends React.Component{
   }
 };
 
-export default CommentInput;
+export default connect(null, { addComment })(CommentInput);
