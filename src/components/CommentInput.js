@@ -1,11 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Col, Button, Form, FormGroup,Label,Input} from 'reactstrap';
+import { addComment} from '../actions/commentActions';
+
+
 class CommentInput extends React.Component{
     
  state = {
      content: ''
  }
+
 
  render() {
     return (
