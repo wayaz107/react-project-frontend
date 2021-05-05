@@ -41,6 +41,7 @@ class CommentInput extends React.Component {
           </FormGroup>
 
           <Button>Add Comment</Button>
+          <br/><br/>
         </Form>
       </div>
     );
