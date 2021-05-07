@@ -13,7 +13,7 @@ export const fetchProducts = () => {
 
     
   //add products
-  export const addProduct = (productData) => {
+  export const addProduct = (productData, history, path) => {
       return (dispatch) => {
       fetch ('http://localhost:3000/products',{
         method: 'POST',
@@ -22,6 +22,7 @@ export const fetchProducts = () => {
       })
       .then(res => res.json())
       .then(product => {
+        history.push(path)
         dispatch({type: 'ADD_PRODUCT', payload: product})
       })
     }

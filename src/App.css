@@ -193,7 +193,7 @@ padding-bottom: 10px;
     max-width: 100%;
 }
 
-.DeleteButton {
+.OwnedButton, .WishListButton, .DeleteButton {
   display: inline-block; 
   margin: 0 auto;
   width: 250px;

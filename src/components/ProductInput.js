@@ -19,7 +19,8 @@ class ProductInput extends React.Component {
 
     handleSubmit = e => {
      e.preventDefault();
-     this.props.addProduct(this.state);
+     const path = '/products';
+     this.props.addProduct(this.state, this.props.history, path);
      this.setState({
         name: '',
         brand: '',
