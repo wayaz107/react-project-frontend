@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import { Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 import Comments from '../containers/Comments';
 import {deleteProduct,toggleOwned, toggleWishList} from '../actions/productActions';
+// import Button from './Button';
 
 const ProductShow = props => {
 
@@ -39,7 +40,7 @@ const ProductShow = props => {
         </Button>
         <Button onClick={handleDelete} className='DeleteButton'>Delete This Product</Button>
         </Card>
-
+        
         <Comments product={product} />
     </div>
     )
