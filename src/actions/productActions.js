@@ -11,9 +11,9 @@ export const fetchProducts = () => {
       };
     };
 
-    //add products
-
-    export const addProduct = (productData) => {
+    
+  //add products
+  export const addProduct = (productData) => {
       return (dispatch) => {
       fetch ('http://localhost:3000/products',{
         method: 'POST',
@@ -28,33 +28,20 @@ export const fetchProducts = () => {
   }
 
   //delete products
-  export const deleteProduct = productId => {
-    return (dispatch) => {
-      fetch (`http://localhost:3000/products/${productId}`, {
-        method: 'DELETE'
-      })
-      .then(res => res.json())
-      .then(product => {
-        dispatch({type: 'DELETE_PRODUCT', payload: product.id})
-      })
-    }
-  }
+  // export const deleteProduct = productId => {
+  //   return (dispatch) => {
+  //     fetch (`http://localhost:3000/products/${productId}`, {
+  //       method: 'DELETE'
+  //     })
+  //     .then(res => res.json())
+  //     .then(product => {
+  //       dispatch({type: 'DELETE_PRODUCT', payload: product.id})
+  //     })
+  //   }
+  // }
 
 // //toggle product owned/not owned
 // export const toggleOwned = (product, productId) => {
 //   const updateOwned = 
 // }
 
-export const addCommment = (comment, productId) => {
-  return(dispatch) => {
-     fetch(`http://localhost:3000/products/${productId}/comments`, {
-         method: 'POST',
-         headers: {'Content-Type': 'application/json'},
-         body: JSON.stringify(comment)
-     })
-     .then(res => res.json())
-     .then(product => {
-         dispatch({type: 'ADD_COMMENT', payload: product})
-     })
-  };
-};

@@ -7,7 +7,7 @@ const OwnedProducts = props => {
     
     return (
     <div className='ProductContainer'>
-       <h3 style={{color: 'white', fontWeight: '700', borderStyle: 'dotted' }}>Products You Already Have</h3>
+       <h3 style={{color: 'white', fontWeight: '500'}}>Products You Already Have</h3>
       {props.products.map(product => {
       if(product.owned ===true){
           return (

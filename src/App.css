@@ -192,3 +192,9 @@ padding-bottom: 10px;
     width: 100%;
     max-width: 100%;
 }
+
+.DeleteButton {
+  display: inline-block; 
+  margin: 0 auto;
+  width: 250px;
+}

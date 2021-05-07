@@ -27,8 +27,6 @@ class ProductInput extends React.Component {
         })
     }
 
-
-
     render(){
         return(
             <div className='ProductFormContainer'>
