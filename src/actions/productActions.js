@@ -41,7 +41,19 @@ export const fetchProducts = () => {
   // }
 
 // //toggle product owned/not owned
-// export const toggleOwned = (product, productId) => {
-//   const updateOwned = 
-// }
+export const toggleOwned = (product, productId) => {
+  const updatedOwned = {...product, owned: !product.owned};
+
+  return (dispatch) => {
+    fetch(`http://localhost:3000/products/${productId}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({product: updatedOwned})
+    })
+    .then(res => res.json())
+    .then(product => {
+      dispatch({type: 'TOGGLE_OWNED', payload: product})
+    })
+  }
+}
 

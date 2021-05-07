@@ -8,6 +8,16 @@ const productReducer = (state = { products: [] }, action) => {
         case 'ADD_PRODUCT':
           return{...state, products: [...state.products, action.payload]}
          
+        case 'TOGGLE_OWNED':
+        case 'TOGGLE_WISH_LIST':
+          const product = state.products.map(product => {
+            if(product.id !== action.payload.id){
+              return product
+            } else {
+              return action.payload
+            }
+          })
+          return {...state, products: product}
          
         case 'ADD_COMMENT':
             const addCommentProduct = state.products.map(product => {
