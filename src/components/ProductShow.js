@@ -31,7 +31,7 @@ const ProductShow = props => {
            <CardImg className='ProductImage' src={product && product.image} alt={product && product.name} /><br></br><br></br>
         </CardBody>
         <Button onClick={handleOwned} className='OwnedButton' style={{alignItems: 'center'}}>
-            {product && product.owned === false? 'Add to Owned': 'You Own It'}
+            {product && product.owned === false? 'Add to Personal Collection': 'Already Own It '}
         </Button>
 
         <Button onClick={handleWishList} className='WishListButton'>

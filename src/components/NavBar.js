@@ -7,7 +7,7 @@ const NavBar = () => {
         <div className = "NavbarContainer">
             <NavLink to='/' className='NavbarLink'>Home</NavLink>
             <NavLink to='/products' className='NavbarLink'>Skincare</NavLink>
-            <NavLink to='/products/Owned' className='NavbarLink'>Owned</NavLink>
+            <NavLink to='/products/Owned' className='NavbarLink'>Personal Collection</NavLink>
             <NavLink to='/products/wish-list' className='NavbarLink'>WishList</NavLink>
         </div>
     )
