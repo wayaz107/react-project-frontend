@@ -7,7 +7,11 @@ const productReducer = (state = { products: [] }, action) => {
         
         case 'ADD_PRODUCT':
           return{...state, products: [...state.products, action.payload]}
-         
+        
+        case 'DELETE_PRODUCT':
+          const filteredProducts = state.products.filter(product => product.id !== action.payload )
+          return {...state, products: filteredProducts}
+        
         case 'TOGGLE_OWNED':
         case 'TOGGLE_WISH_LIST':
           const product = state.products.map(product => {

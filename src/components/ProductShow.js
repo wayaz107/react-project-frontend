@@ -2,11 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { Card, CardBody, CardTitle, CardImg, Button } from 'reactstrap';
 import Comments from '../containers/Comments';
-import {toggleOwned, toggleWishList} from '../actions/productActions';
+import {deleteProduct,toggleOwned, toggleWishList} from '../actions/productActions';
 
 const ProductShow = props => {
 
     let product = props.products.filter(product => product.id == props.match.params.id)[0];
+
+    const handleDelete = () => {
+        props.deleteProduct(product.id);
+        const path = '/products'
+        props.history.push(path);
+    }
+
 
     const handleOwned = () => {
         props.toggleOwned(product, product.id)
@@ -30,6 +37,7 @@ const ProductShow = props => {
         <Button onClick={handleWishList} className='WishListButton'>
             {product && product.wish_list === false? 'Add to Wish List' : 'This Is In your Wish List'}
         </Button>
+        <Button onClick={handleDelete} className='DeleteButton'>Delete This Product</Button>
         </Card>
 
         <Comments product={product} />
@@ -37,4 +45,4 @@ const ProductShow = props => {
     )
 }
 
-export default connect(null, {toggleOwned,toggleWishList})(ProductShow);
+export default connect(null, {deleteProduct,toggleOwned,toggleWishList})(ProductShow);
