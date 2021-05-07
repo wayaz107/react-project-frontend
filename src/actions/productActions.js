@@ -57,3 +57,21 @@ export const toggleOwned = (product, productId) => {
   }
 }
 
+//add product to the wishlist
+
+export const toggleWishList = (product, productId) => {
+  const updatedWishList = {...product, wish_list: !product.wish_list};
+
+  return (dispatch) => {
+    fetch(`http://localhost:3000/products/${productId}`, {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({product: updatedWishList})
+    })
+    .then(res => res.json())
+    .then(product => {
+    dispatch({type: 'TOGGLE_WISH_LIST', payload: product})
+  })
+ }
+}
+
