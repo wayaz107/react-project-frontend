@@ -1,4 +1,4 @@
-Diva Skin Lounge - Frontend
+Diva Skincare Lounge - Frontend
 
 This project was built with a Rails API and a React/Redux frontend. Users can add products with a name, and brand name. You can add comments to those products as well as add products to your wish-list.
 
