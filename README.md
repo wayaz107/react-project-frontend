@@ -12,3 +12,5 @@ You will be on the home page.
 To see all of your products, click 'Products'. There, you can add a new product or click on an existing product to add comments to it. Here, you can also add a product to your personal collection list or to a wish list.
 Click 'Personal Collection' to see the products you already own.
 Click 'Wish List' to see which products you want to buy.
+
+link to backend - https://github.com/wayaz107/react-project-backend
